@@ -1,0 +1,818 @@
+/* ===== start varibale ===== */
+:root{
+    --main-color:#ff305b;
+    --section-background-color:#EC2403 ;
+    --transparent-color:#333 ;
+    --section-padding:80px;
+    --section-background:#f1f1f1;
+}
+/* ===== end varibale ===== */
+/* ===== start globale rules ===== */
+body{
+    font-family: 'Roboto','Source Sans Pro' ;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-header{
+    width: fit-content;
+    margin: 0px auto 60px;
+    position: relative;
+}
+.section-header h2::before,
+.section-header h2::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.section-header h2::before{
+    background-color: var(--main-color);
+    width: 160px;
+    height: 1px;
+}
+.section-header h2::after{
+    width: 70px;
+    height: 10px;
+    border-top: 1px solid var(--main-color);
+    bottom: -6px;
+    border-bottom: 1px solid var(--main-color);
+}
+.section-header h2{
+    margin-bottom: 40px;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 30px;
+    padding: 20px 0px;
+}
+/* ===== extra small screen ===== */
+@media screen and (max-width:600px){
+    
+}
+/* ===== small screen ===== */
+@media screen and (min-width:601px) and (max-width:768px) {
+    .container{
+        width: 100%;
+    }
+}
+/* ===== medium screen ===== */
+@media screen and (min-width:769px) and (max-width:991px) {
+    .container{
+        width: 100%;
+    }
+}
+/* ===== large screen ===== */
+@media screen and (min-width:992px) and (max-width:1200px) {
+    .container{
+        width: 90%;
+    }
+}
+@media(min-width:1201px) {
+    .container{
+        width: 1170px;
+    }
+}
+.clr{
+    clear: both;
+}
+/* ===== end globale rules ===== */
+/* start header */
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+.header .logo{
+    width: 20%;
+    float: left;
+}
+.header .logo a{
+    padding: 15px;
+    display: block;
+    font-size: 25px;
+    color: var(--main-color);
+    font-weight: 900;
+}
+.header .container i{
+    width: 20%;
+    float: right;
+    padding: 15px;
+    display: none;
+    text-align: end;
+    color: white;
+    font-size: 20px;
+}
+@media screen and (min-width:500px) and (max-width:768px){
+    .header .container i{
+        display: block;
+    }
+}
+.header ul.list{
+    width: 80%;
+    float: left;
+    text-align: end;
+    padding: 10px 0px;
+}
+@media screen and (min-width:500px) and (max-width:768px) {
+    .header ul.list{
+        display: none;
+    }
+}
+.header ul.list li{
+    display: inline-block;
+    padding: 15px 10px
+}
+.header ul.list li a{
+    color: white;
+    transition: all .5s;
+}
+.header ul.list li a:hover{
+    color: var(--main-color);
+}
+.header ul.list li.active a{
+    color: var(--main-color);
+}
+/* end header */
+/* start landing */
+.landing{
+    position: relative;
+    background-image: url(../img/slider/slider-01.jpg);
+    background-position:  center center;
+    background-size: cover;
+    height: 100vh;
+}
+.landing .overlay{
+    background-color: rgba(0,0,0,0.8);
+    height: 100vh;
+    overflow: hidden;
+}
+.landing .landing-section{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.landing .landing-section h3{
+    font-size: 25px;
+    margin-top: 10px;
+}
+@media screen and (max-width:768px) {
+    .landing .landing-section h3{
+        font-size: 20px
+    }
+}
+.landing .landing-section span{
+    display: block;
+    margin: 10px 0px 15px;
+    font-size: 65px;
+    color: var(--main-color);
+}
+@media screen and (max-width:768px) {
+    .landing .landing-section span{
+        font-size: 40px
+    }
+}
+.landing .landing-section p{
+    font-size: 25px;
+    font-weight: 300;
+}
+@media screen and (max-width:768px) {
+    .landing .landing-section p{
+        font-size: 19px;
+        font-weight: 600;
+    }
+}
+/* end landing */
+/* start infor */
+.about{
+    padding: 100px 0px;
+}
+.about .container{
+    width: 80%;
+    margin: auto;
+    padding: 0;
+}
+.about .box{
+    width: 40%;
+    float: left;
+    position: relative;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .about .box{
+        width: 100%;
+        text-align: center;
+    }
+}
+@media screen and (min-width:768px) {
+    .about .box{
+        padding-right: 30px;
+    }
+}
+.about .box-images{
+    width: 90%;
+    position: relative;
+    overflow: hidden;
+}
+.about .box img{
+    max-width: 100%;
+    vertical-align: bottom;
+    border-radius: 10px;
+    position: relative;
+}
+.about .box-images::before{
+    content: "";
+    position: absolute;
+    width: 93%;
+    height: 97%;
+    border: 7px solid #777;
+    border-radius: 10px;
+    top: -22px;
+    left: -21px;
+}
+.about .about-icon{
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    transition: all .5s;
+    border-radius: 10px;
+}
+.about .box-images:hover .about-icon{
+    top: 0px;
+}
+.about .about-icon .icons{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+.about .about-icon .icons i{
+    padding-right: 10px;
+    color: white;
+    font-size: 18px;
+    transition: all .5s;
+}
+.about .about-icon .icons i:hover{
+    color: var(--main-color);
+}
+.about .box-1{
+    width: 60%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .about .box-1{
+        width: 100%;
+    }
+}
+.about .desc{
+    border-bottom: 1px dashed #777
+}
+.about .desc p{
+    line-height: 1.5;
+    color: #777;
+    margin-bottom: 16px;
+}
+.about .about-infor{
+    margin-top: 25px;
+}
+.about .about-title {
+    margin-bottom: 20px;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .about .about-title{
+       margin: 0;
+    }
+}
+.about .about-title p{
+    width: 44%;
+    float: left;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .about .about-title p{
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 17px;
+    }
+}
+@media screen and (min-width:768) and (max-width:1200px) {
+    .about .about-title p{
+        width: 50%;
+        font-size: 14px;
+    }
+}
+.about .about-title span{
+    color: #777;
+}
+.about .about-title p a{
+    color: #777;
+}
+.about .links button{
+    background-color: var(--main-color);
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    font-weight: 400;
+    margin-right: 10px;
+    border-radius: 10px;
+    transition: background-color .5s ;
+    cursor: pointer;
+}
+.about .links button:hover{
+    background-color: var(--section-background-color);
+}
+.about .links button a{
+    color: white;
+    margin-right: 5px;
+}
+/* end infor */
+/* start service */
+.service{
+    padding: 100px 0 54px;
+    background-color: #f1f1f1;
+}
+.service .container{
+    width: 90%;
+}
+.service .box{
+    width: 25%;
+    float: left;
+    overflow: hidden;
+    padding: 30px 15px;
+    text-align: center;
+    transition: all .4s;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .service .box{
+        width: 100%;
+        padding: 35px 30px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .service .box{
+        width: 50%;
+        padding: 35px 23px;
+    }
+}
+.service .box:hover{
+    background-color: white;
+    box-shadow: 9px 5px 26px 10px #ddd;
+}
+.service .box i{
+    font-size: 35px;
+    margin-bottom: 30px;
+    color: var(--main-color);
+    transition: all 1s;
+}
+.service .box:hover i{
+    transform: scale(1.2);
+}
+.service .box h3{
+    margin-bottom: 20px;
+    font-size: 23px;
+    font-weight: 600;
+}
+.service .box p{
+    line-height: 1.4;
+    color: #777;
+}
+/* end service */
+/* start portfolio */
+.portfolio{
+    padding: 100px 0 54px;
+}
+.portfolio .menu{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .portfolio .menu{
+        width: 100%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .portfolio .menu{
+        width: 100%;
+    }
+}
+.portfolio .menu li{
+    display: inline-block;
+    padding: 10px 16px;
+}
+.portfolio .menu li a{
+    color: var(--transparent-color);
+    font-size: 17px;
+    transition: color .5s;
+}
+.portfolio .menu li a:hover{
+    color: var(--main-color);
+}
+.portfolio .menu li.active a{
+    color: var(--main-color);
+}
+.portfolio .container{
+    padding: 50px 0px;
+    width: 90%;
+}
+.portfolio .box{
+    width: 33.3%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    padding: 0px 10px;
+    margin-bottom: 25px;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .portfolio .box{
+        width: 100%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .portfolio .box{
+        width: 50%;
+    }
+} 
+.portfolio .box-content{
+    margin: 0px 10px;
+    position: relative;
+    cursor: pointer;
+}
+.portfolio .box-content::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+    opacity: 0;
+    transition: opacity .5s;
+}
+.portfolio .box-content:hover::before{
+    opacity: 1;
+}
+.portfolio .box img{
+    width: 100%;
+    vertical-align: middle;
+}
+.portfolio .box i{
+    position: absolute;
+    bottom: 20px;
+    left: 90%;
+    font-size: 18px;
+    z-index: 2;
+    color: var(--main-color);
+    opacity: 0;
+    transition: opacity .5s ;
+    cursor: pointer;
+}
+.portfolio .box-content:hover i{
+    opacity: 1;
+}
+/* end portfolio */
+/* start facts */
+.facts{
+    background-color: var(--section-background);
+    padding: 100px 0px;
+}
+.facts .box{
+    width: 25%;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .facts .box{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+.facts .box i{
+    display: block;
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: var(--main-color);
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .facts .box i{
+        font-size: 25px;
+    }
+}
+.facts .box span{
+    font-size: 23px;
+    font-weight: 900;
+    margin-bottom: 7px;
+    display: block;
+}
+.facts .box p{
+    font-size: 15px;
+    font-weight: 600;
+    color: #999;
+}
+/* end facts */
+/* start feedback */
+.feedback{
+    padding: 100px 0 54px;
+}
+.feedback .container{
+    width: 66%;
+    margin: auto;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .feedback .container{
+        width: 100%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .feedback .container{
+        width: 80%;
+    }
+}
+.feedback .feedback-content{
+    width: 90%;
+    background-color: var(--section-background);
+    border-radius: 10px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+.feedback .feedback-content::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -22.5%;
+    border-color: var(--main-color) transparent transparent;
+    border-style: solid;
+    border-width: 175px;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .feedback .feedback-content::before{
+        left:  -46.5%;
+        border-width: 200px;
+    }
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .feedback .feedback-content{
+        width: 100%;
+        padding: 50px 7px;
+    }
+}
+.feedback .feedback-images{
+    width: 110px;
+    float: left;
+    position: relative;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .feedback .feedback-images{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }   
+}    
+.feedback .feedback-images img{
+    width: 110px;
+    vertical-align: bottom;
+    border-radius: 50%;
+    max-width: 100%;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .feedback .feedback-images img{
+        text-align: center;
+    }
+}
+.feedback .feedback-desc{
+    width: 80%;
+    float: left;
+    padding-left: 20px;
+}
+.feedback .feedback-desc h2{
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.feedback .location{
+    margin-bottom: 15px;
+    color: #777;
+}
+.feedback .location i{
+    font-size: 14px;
+}
+.feedback .location span{
+    font-size: 14px;
+    font-weight: 600;
+}
+.feedback .feedback-desc p{
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.feedback .star i{
+    color: #f1c30d;
+}
+.feedback .balls{
+    text-align: center;
+}
+.feedback .balls .one{
+    background-color: var(--main-color);
+    width: 25px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.feedback .balls .two{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--main-color);
+}
+/* end feedback */
+/* start blog */
+.blog{
+    padding: 100px 0px;
+    background-color: var(--section-background);
+}
+.blog .box{
+    width: 33.3%;
+    float: left;
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    .blog .box{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .blog .box{
+        width: 50%;
+
+    }
+}
+.blog .box-content{
+    margin: 0px 10px;
+    background-color: white;
+    padding-bottom: 20px;
+}
+.blog .box-content img{
+    width: 100%;
+    max-width: 100%;
+}
+.blog .content{
+    padding: 0px 15px;
+}
+.blog .content h4{
+    margin: 10px 0px;
+    color: #777;
+    font-size: 20px;
+    font-weight: 400;
+}
+.blog .content h2{
+    margin: 15px 0px 17px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color .3s;
+    width: fit-content;
+    color: var(--transparent-color);
+}
+.blog .content h2:hover{
+    color: var(--main-color);
+}
+.blog .content p{
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.blog .content a{
+    text-transform: uppercase;
+    color: var(--transparent-color);
+    transition: all .2s ;
+}
+.blog .content a:hover{
+    color: var(--main-color);
+}
+.blog .image iframe{
+    width: 100%;
+    height: 202px;
+}
+/* end blog */
+/* start content */
+.contect{
+    padding: 80px 0px;
+}
+.contect .box{
+    width: 90%;
+    margin: auto;
+}
+.contect .name,
+.contect .gmail{
+    width: 50%;
+    float: left;
+}
+@media screen and (min-width:500px)  and (max-width:767px){
+    .contect .gmail{
+        width: 100%;
+    }
+}
+.contect .name{
+    padding-right: 10px;
+}
+@media screen and (min-width:500px)  and (max-width:767px){
+    .contect .name{
+        width: 100%;
+        padding-right: 0px;
+        margin-bottom: 30px;
+    }
+}
+.contect .name input,
+.contect .gmail input,
+.contect .subject input,
+.contect .box textarea{
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    padding: 6px 12px; 
+    border: 1px solid #ddd;
+}
+.contect .name input:focus,
+.contect .gmail input:focus,
+.contect .subject input:focus,
+.contect .box textarea:focus{
+    outline: 1px solid var(--main-color);
+}
+.contect .subject{
+    margin-top: 30px;
+}
+/* {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    padding: 6px 12px; 
+    border: 1px solid #ddd;
+} */
+.contect .box textarea{
+    height: 100px;
+    margin-top: 30px;
+}
+.contect .box button{
+    background-color: var(--main-color);
+    padding: 15px 25px;
+    color: white;
+    border: none;
+    margin-top: 25px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+/* end content */
+/* start footer */
+.footer{
+    padding: 50px 0px;
+    background-color: #333333;
+    text-align: center;
+}
+.footer .box-icon{
+    margin-bottom: 15px;
+    color: white;
+}
+.footer .box-icon i{
+    padding: 7px;
+    transition: color .3s;
+    cursor: pointer;
+}
+.footer .box-icon i:hover{
+    color: var(--main-color);
+}
+.footer .container p{
+    color: white;
+}
+.footer .container p > a{
+    color: var(--main-color);
+    transition: text-decoration .3s;
+}
+.footer .container p > a:hover{
+    text-decoration: underline;
+
+}
+/* end footer */
